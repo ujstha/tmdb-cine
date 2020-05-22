@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
+import NavigationBarContainer from './containers/NavigationBarContainer';
 
 class App extends Component {
   render() {
-    return <div className='App'></div>;
+    return (
+      <>
+        <NavigationBarContainer />
+      </>
+    );
   }
 }
 
