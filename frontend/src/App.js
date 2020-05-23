@@ -14,6 +14,7 @@ class App extends Component {
     return (
       <MuiThemeProvider theme={theme}>
         <BrowserRouter>
+          <NavigationBarContainer />
           <Switch>
             <Route exact path='/tvs/:id' component={NavigationBarContainer} />
           </Switch>
