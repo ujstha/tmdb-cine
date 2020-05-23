@@ -1,0 +1,152 @@
+@mixin flexNoWrap {
+  display: flex !important;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  overflow-x: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  scrollbar-width: none;
+}
+@mixin flexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@mixin flexColumnCenter {
+  @include flexCenter;
+  flex-direction: column;
+}
+@mixin flexRowCenter {
+  @include flexCenter;
+  flex-direction: row;
+}
+@mixin textEllipsis {
+  position: relative;
+  max-width: 95%;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+@mixin searchSuggestHover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #f4f4f4;
+}
+@mixin imgObj {
+  object-fit: cover;
+  object-position: top;
+  background-color: transparent;
+}
+@mixin imgOverlay {
+  @include flexColumnCenter;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+@mixin voteImgOverlay {
+  display: none;
+  color: #eee;
+  font-size: 18px;
+}
+@mixin imgHoverScale {
+  cursor: pointer;
+  img {
+    transform: scale(1.1);
+  }
+}
+@mixin backgroundFixed {
+  width: 100%;
+  max-width: 100%;
+  min-height: 100%;
+  background-attachment: fixed;
+  background-position: top;
+  background-size: cover;
+}
+@mixin detailTitle {
+  margin-top: 1em;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #1d1d1d !important;
+}
+@mixin scrollBarWidth {
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+}
+@mixin lightScrollBar {
+  @include scrollBarWidth;
+  &::-webkit-scrollbar-track {
+    background-color: rgba(169, 169, 169, 0.2) !important;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2) !important;
+  }
+}
+@mixin darkScrollBar {
+  @include scrollBarWidth;
+  &::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0.6) !important;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+  }
+}
+@mixin hideScroll {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  & {
+    scrollbar-width: none;
+  }
+}
+@mixin singleImgXL {
+  height: calc(100vh + 10px);
+  width: 100%;
+}
+@mixin singleImgLG {
+  height: 50vh;
+  width: 100%;
+}
+@mixin statusIMDb {
+  display: inline-block;
+  padding: 5px 10px;
+  margin: 15px 8px 8px 0;
+  font-size: 1.1em;
+  font-weight: bold;
+  color: $dark-theme-text-color;
+}
+@mixin span {
+  display: block;
+  line-height: 1em;
+  font-weight: bold;
+}
+@mixin lightHover {
+  &:hover {
+    background-color: $light-theme-hover-background-color;
+    color: $dark-theme-text-color;
+    cursor: pointer;
+  }
+}
+@mixin searchHomeOverlay {
+  width: 106%;
+  height: auto;
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  padding: 5px 10px;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 50%, transparent);
+  transition: all ease-in-out 0.3s;
+  font-size: 12px;
+  .home__homeMovieTv-title,
+  .search__result-title {
+    display: block;
+    @include textEllipsis;
+  }
+  .home__homeMovieTv-date-vote,
+  .search__result-date-vote {
+    opacity: 0;
+  }
+}
