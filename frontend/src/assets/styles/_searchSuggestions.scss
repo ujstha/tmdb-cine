@@ -1,0 +1,89 @@
+.search__suggestions-wrapper {
+  margin: 0 15em;
+  min-width: calc(100% - (15em * 2));
+  max-height: $search-suggestion-result-height;
+  max-width: calc(100% - (15em * 2));
+  position: fixed;
+  top: 60px;
+  left: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  z-index: 98;
+  box-shadow: 2px 2px 4px #000, 0px 2px 4px #000;
+  background-color: $light-theme-background-color;
+  @media (min-width: 768px) and (max-width: 1023px) {
+    margin: 0 2em;
+    min-width: calc(100% - (2em * 2));
+  }
+  @media (min-width: 1024px) and (max-width: 1365px) {
+    margin: 0 3em;
+    min-width: calc(100% - (3em * 2));
+  }
+  @media (max-width: 767px) {
+    margin: 0 15px;
+    min-width: calc(100% - (15px * 2));
+    max-height: 25em;
+  }
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: #fff;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  .search__suggestions-result {
+    padding: 10px;
+    padding-top: 15px;
+    border-bottom: 1px solid #fff;
+    &:hover {
+      @include searchSuggestHover;
+    }
+  }
+  .search__suggestions-result-list {
+    padding: 10px;
+    display: flex;
+    &:not(:last-of-type) {
+      border-bottom: 1px solid #fff;
+    }
+    &:hover {
+      @include searchSuggestHover;
+    }
+
+    .search__suggestions-img {
+      height: 60px;
+      width: 45px;
+      margin-right: 10px;
+      @include imgObj;
+    }
+    .search__suggestions-detail {
+      width: 100%;
+      .search__suggestions-overview {
+        @include textEllipsis;
+      }
+    }
+  }
+  .search__suggestions-loading,
+  .ant-empty {
+    @include flexColumnCenter;
+    min-height: $search-suggestion-loading-height;
+    max-height: $search-suggestion-loading-height;
+  }
+}
+
+body.dark-theme {
+  .search__suggestions-wrapper {
+    background-color: $dark-theme-background-color !important;
+    .search__suggestions-result,
+    .search__suggestions-result-list {
+      &:not(:last-of-type) {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+      }
+    }
+  }
+  .search__suggestions-loading h4 {
+    color: $dark-theme-text-color;
+  }
+}

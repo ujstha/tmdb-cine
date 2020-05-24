@@ -3,10 +3,15 @@ import { withRouter } from 'react-router-dom';
 import { Tooltip } from 'antd';
 import { IconButton } from '@material-ui/core';
 import { navs } from '../../constants/navItems';
+import storage from '../../services/storage';
 
 const NavItem = ({ location }) =>
   navs
-    .filter((filteredNav) => filteredNav.type !== 'loggedIn')
+    .filter(
+      (filteredNav) =>
+        filteredNav.type !==
+        (storage.get('authToken') ? 'loggedOut' : 'loggedIn')
+    )
     .map((nav, index) => (
       <Tooltip key={index} placement='bottom' title={nav.title}>
         <li className='nav-item'>

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import NavigationBar from '../components/navigation-component/NavigationBar';
 import SearchInput from '../components/navigation-component/SearchInput';
+import SideNavigationBar from '../components/navigation-component/SideNavigationBar';
+import SearchSuggestions from '../components/navigation-component/SearchSuggestions';
 
 class NavigationBarContainer extends Component {
   state = {
@@ -109,6 +111,16 @@ class NavigationBarContainer extends Component {
           toggleSearchInput={this.toggleSearchInput}
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
+        />
+        <SearchSuggestions
+          query={searchQuery}
+          setWrapperRef={this.setWrapperRef}
+          searchSuggestionOpen={searchSuggestionBox}
+        />
+        <SideNavigationBar
+          collapsed={sideNavCollapsed}
+          setWrapperRef={this.setWrapperRef}
+          handleThemeChange={this.handleThemeChange}
         />
       </>
     );

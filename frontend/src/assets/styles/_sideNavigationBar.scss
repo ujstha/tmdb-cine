@@ -1,0 +1,94 @@
+.side-navigation {
+  height: 100%;
+  width: 20em;
+  position: fixed;
+  z-index: 99991;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  padding-top: 5px;
+  background-color: $light-theme-background-color;
+  transition: all ease-in 0.3s;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+  ul {
+    hr {
+      margin: 5px 0 !important;
+      background-color: rgba(255, 255, 255, 0.5) !important;
+    }
+    li {
+      text-align: left;
+      white-space: nowrap;
+      &.side-navigation-close-btn {
+        margin-left: 16em;
+      }
+      & > a,
+      & > span {
+        display: block;
+        padding: 5px 15px;
+        margin: 5px 0;
+        text-decoration: none;
+        font-size: 18px;
+        line-height: 20px;
+        color: $light-theme-text-color;
+        background-color: transparent;
+        transition: all ease-in 0.1s;
+        span.side-navigation-title {
+          display: inline-block;
+          margin-left: 10px;
+        }
+        &:hover {
+          background-color: $light-theme-active-background-color;
+        }
+        &.active {
+          border-right: 4px solid rgba(0, 0, 0, 1);
+          background-color: $default-hover-background-color;
+          color: $dark-theme-text-color;
+          .MuiIconButton-label {
+            color: $dark-theme-text-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+.side-navigation.collapsed {
+  width: 0;
+  ul li {
+    text-align: center;
+    a {
+      font-size: 20px;
+      padding: 15px 25px;
+      span {
+        display: none;
+      }
+    }
+  }
+}
+
+body.dark-theme {
+  .side-navigation {
+    background-color: $dark-theme-background-color;
+    ul li {
+      & > a,
+      & > span {
+        color: $dark-theme-text-color;
+        .MuiIconButton-label {
+          color: $dark-theme-text-color;
+        }
+
+        &:hover {
+          background-color: $dark-theme-active-background-color;
+        }
+        &.active {
+          border-right: 4px solid grey;
+          background-color: $dark-theme-text-color;
+          color: $dark-theme-background-color;
+          .MuiIconButton-label {
+            color: $dark-theme-background-color;
+          }
+        }
+      }
+    }
+  }
+}
