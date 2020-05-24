@@ -1,0 +1,59 @@
+.error-page-container {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: 9999999;
+  font-family: 'Prosto One';
+  background-color: $text-color;
+  @include flexCenter;
+  .error-page {
+    @include flexCenter;
+    .error-img {
+      height: 300px;
+      img {
+        height: 100%;
+      }
+    }
+    .error-details {
+      text-align: center;
+      h1,
+      p {
+        margin: 0;
+        line-height: 1;
+      }
+      h1 {
+        font-size: 6em;
+        font-weight: bold;
+      }
+      p {
+        margin-bottom: 5px;
+        font-size: 40px;
+      }
+      .error-msg {
+        display: block;
+        margin-bottom: 1em;
+        font-size: 16px;
+      }
+      .ant-btn-primary {
+        span {
+          color: #fff !important;
+          &::before {
+            font-family: 'FontAwesome';
+            content: '\f060';
+          }
+        }
+      }
+    }
+    @media (max-width: 767px) {
+      flex-direction: column;
+    }
+  }
+}
+.movieTv__zero-result {
+  display: block !important;
+  padding-top: 8em;
+  text-align: center !important;
+  h2 {
+    color: #e91e63 !important;
+  }
+}
