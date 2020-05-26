@@ -1,7 +1,7 @@
 import React from 'react';
-import Helmet from 'react-helmet';
+import { Helmet } from 'react-helmet';
 
-export const HeadTitle = ({ title, description }) => {
+const HeadTitle = ({ title, description }) => {
   return (
     <Helmet>
       <title>{`${title} | TMDbCine`}</title>
@@ -9,3 +9,5 @@ export const HeadTitle = ({ title, description }) => {
     </Helmet>
   );
 };
+
+export default HeadTitle;
