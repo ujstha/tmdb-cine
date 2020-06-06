@@ -20,7 +20,7 @@ class Carousel extends Component {
     }
   };
   render() {
-    const { xl, lg, md, sm, children } = this.props;
+    const { xl, lg, md, sm } = this.props;
 
     const settings = {
       dots: false,
@@ -56,7 +56,7 @@ class Carousel extends Component {
 
     return (
       <Slider {...settings} ref={(sliderRef) => (this.sliderRef = sliderRef)}>
-        {children}
+        {this.props.children}
       </Slider>
     );
   }
