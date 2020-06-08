@@ -8,6 +8,7 @@
   @include flexCenter;
   .error-page {
     @include flexCenter;
+    color: $light-theme-text-color;
     .error-img {
       height: 300px;
       img {

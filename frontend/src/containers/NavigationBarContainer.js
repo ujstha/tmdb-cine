@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
-import NavigationBar from '../components/navigation-component/NavigationBar';
+import { withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { multiSearchAction } from '../actions/searchAction';
+import { goToUrl } from '../services/goToUrl';
 import SearchInput from '../components/navigation-component/SearchInput';
 import SideNavigationBar from '../components/navigation-component/SideNavigationBar';
 import SearchSuggestions from '../components/navigation-component/SearchSuggestions';
+import NavigationBar from '../components/navigation-component/NavigationBar';
 
 class NavigationBarContainer extends Component {
   state = {
@@ -59,6 +63,9 @@ class NavigationBarContainer extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
+    if (this.state.searchQuery !== '') {
+      goToUrl(`/search/query=${this.state.searchQuery}&type=movie`);
+    }
   };
 
   handleChange = (e) => {
@@ -66,6 +73,9 @@ class NavigationBarContainer extends Component {
       searchQuery: e.target.value,
       searchSuggestionBox: true,
     });
+    if (e.target.value !== '') {
+      this.props.multiSearchAction(e.target.value.trim(), '1');
+    }
   };
 
   setWrapperRef = (node) => {
@@ -98,6 +108,7 @@ class NavigationBarContainer extends Component {
       sideNavCollapsed,
       searchQuery,
     } = this.state;
+    const { searchResults } = this.props;
     return (
       <>
         <NavigationBar
@@ -114,6 +125,8 @@ class NavigationBarContainer extends Component {
         />
         <SearchSuggestions
           query={searchQuery}
+          searchResults={searchResults.searchSuggestions}
+          isLoading={searchResults.isLoading}
           setWrapperRef={this.setWrapperRef}
           searchSuggestionOpen={searchSuggestionBox}
         />
@@ -127,4 +140,10 @@ class NavigationBarContainer extends Component {
   }
 }
 
-export default NavigationBarContainer;
+const mapStateToProps = (state) => ({
+  searchResults: state.searchResults,
+});
+
+export default connect(mapStateToProps, { multiSearchAction })(
+  withRouter(NavigationBarContainer)
+);

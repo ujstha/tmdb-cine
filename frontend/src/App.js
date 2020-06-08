@@ -18,7 +18,7 @@ class App extends Component {
       <MuiThemeProvider theme={theme}>
         <BrowserRouter>
           <NavigationBarContainer />
-          {routes}
+          <div className='routes'>{routes}</div>
           <Footer />
           <MoveToTop />
         </BrowserRouter>
