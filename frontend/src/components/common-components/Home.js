@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Slider from 'react-slick';
-import { BackdropImage } from '../helperComponents/PosterImage';
-import { VoteAverage } from '../helperComponents/VoteAverage';
-import { TitleNames } from '../helperComponents/TitleNames';
+import { BackdropImage } from '../helper-components/PosterImage';
+import { VoteAverage } from '../helper-components/VoteAverage';
+import { TitleNames } from '../helper-components/TitleNames';
 import { GetYear } from '../../services/FormattedData';
 import { goToUrl } from '../../services/goToUrl';
 

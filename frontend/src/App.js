@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core';
+import NavigationBarContainer from './containers/NavigationBarContainer';
 import Footer from './components/common-components/Footer';
 import MoveToTop from './components/common-components/MoveToTop';
 import routes from './routes';
@@ -16,6 +17,7 @@ class App extends Component {
     return (
       <MuiThemeProvider theme={theme}>
         <BrowserRouter>
+          <NavigationBarContainer />
           {routes}
           <Footer />
           <MoveToTop />

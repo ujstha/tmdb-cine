@@ -1,8 +1,8 @@
 .footer {
   padding: 2em;
   text-align: center;
-  color: $text-color;
-  background-color: #333;
+  color: $dark-theme-text-color;
+  background-color: grey;
 
   span {
     display: block;
@@ -16,9 +16,15 @@
   }
 
   a {
-    color: $text-color;
+    color: $dark-theme-text-color;
     &:hover {
       color: $default-hover-text-color;
     }
+  }
+}
+
+.dark-theme {
+  .footer {
+    background-color: rgba(0, 0, 0, 0.2);
   }
 }

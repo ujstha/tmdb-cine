@@ -1,0 +1,109 @@
+.home__container {
+  padding-top: $default-padding-top;
+  .home__wrapper {
+    position: relative;
+    & > span {
+      position: relative;
+      display: inline-block;
+      width: auto;
+      top: 12px;
+      left: 10px;
+      margin-bottom: 5px;
+      z-index: 1;
+      font-size: 1.5em;
+      transition: all ease-in-out 0.2s;
+      &:hover {
+        cursor: pointer;
+        color: $default-hover-text-color;
+        transition: all ease-in-out 0.2s;
+      }
+    }
+
+    .slick-arrow {
+      height: calc(100% - 40px) !important;
+      width: 25px;
+      background-color: transparent !important;
+    }
+    .slick-list {
+      @media (max-width: 1365px) {
+        overflow-x: auto;
+        @include hideScroll;
+      }
+    }
+    .slick-slide {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      height: 141.3125px;
+      margin: 15px 0;
+      padding: 2px;
+      font-size: 15px;
+      z-index: 2;
+      cursor: pointer;
+      transition: 450ms all;
+      transform-origin: center left;
+    }
+    .home__homeMovieTv {
+      position: relative;
+      overflow: hidden;
+      color: $text-color;
+    }
+    .home__homeMovieTv-img {
+      position: relative;
+      height: 141.3125px;
+      width: 100%;
+      @include imgObj;
+    }
+    .home__homeMovieTv-overlay {
+      @include searchHomeOverlay;
+      @media (max-width: 1365px) {
+        bottom: 0;
+      }
+      .home__homeMovieTv-date-vote {
+        opacity: 1;
+      }
+      @media (min-width: 1366px) {
+        .home__homeMovieTv-date-vote {
+          opacity: 0;
+        }
+      }
+    }
+    .home__homeMovieTv:hover {
+      @media (min-width: 1366px) {
+        .home__homeMovieTv-overlay {
+          bottom: 0;
+        }
+      }
+      .home__homeMovieTv-date-vote {
+        opacity: 1;
+        transition: all ease-in-out 0.3s;
+      }
+    }
+    .slick-slide:hover .slick-track {
+      transform: translate3d(-62.5px, 0, 0);
+    }
+    @media (min-width: 1366px) {
+      .slick-track:hover .slick-slide:hover {
+        transform: scale(1.2);
+      }
+      .slick-slide:hover ~ .slick-slide {
+        transform: translate3d(20%, 0, 0);
+      }
+    }
+
+    @media (max-width: 767px) {
+      .slick-slide,
+      .home__homeMovieTv-img {
+        height: 170px !important;
+      }
+    }
+  }
+}
+
+body.dark-theme {
+  .home__container {
+    h4 {
+      color: $text-color;
+    }
+  }
+}
