@@ -1,0 +1,96 @@
+.search__result-wrapper {
+  .search__result-container {
+    padding: 0 40px;
+    transition: all ease-in-out 0.3s;
+    @media (max-width: 1023px) {
+      padding: 0 20px;
+    }
+    .col-12 {
+      padding: 5px !important;
+      text-align: center;
+      font-size: 1.5em;
+      font-weight: bold;
+      & > div {
+        padding: 8px;
+        background-color: #fff;
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+      }
+    }
+    .col-12:not(:first-child) {
+      margin-top: 1.5em !important;
+    }
+    .search__result {
+      position: relative;
+    }
+    .col-xl-2 {
+      padding: 5px !important;
+      .search__result {
+        height: 160px;
+        overflow: hidden;
+        color: $text-color;
+        @media (max-width: 767px) {
+          height: 112px;
+        }
+        transition: all ease-in-out 0.3s;
+        .search__result-overlay {
+          @include searchHomeOverlay;
+        }
+        &:hover {
+          cursor: pointer;
+          transform: scale(1.065);
+          .search__result-overlay {
+            bottom: 0;
+          }
+          .search__result-date-vote {
+            opacity: 1;
+            transition: all ease-in-out 0.3s;
+          }
+        }
+      }
+    }
+    .col-person {
+      padding: 5px !important;
+      flex: 0 0 14.28% !important;
+      .search__result {
+        height: 280px;
+        position: relative !important;
+      }
+      @media (max-width: 1365px) {
+        flex: 0 0 16.65% !important;
+        .search__result {
+          height: 220px !important;
+        }
+      }
+      @media (max-width: 1023px) {
+        flex: 0 0 20% !important;
+        .search__result {
+          height: 190px !important;
+        }
+      }
+      @media (max-width: 767px) {
+        flex: 0 0 33% !important;
+        .search__result {
+          height: 170px !important;
+        }
+      }
+    }
+    .search__result-img {
+      height: 100%;
+      width: 100%;
+      @include imgObj;
+    }
+  }
+}
+
+body.dark-theme {
+  .search__result-wrapper {
+    .search__result-container {
+      .col-12 {
+        & > div {
+          color: $text-color;
+          background-color: rgba(255, 255, 255, 0.08);
+        }
+      }
+    }
+  }
+}

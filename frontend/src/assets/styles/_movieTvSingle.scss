@@ -1,0 +1,314 @@
+.movieTv__single-wrapper {
+  position: relative;
+  overflow-x: hidden;
+  @include backgroundFixed;
+  .movieTv__single-wrapper-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 250, 250, 0.92);
+    filter: contrast(110%) !important;
+    @include backgroundFixed;
+  }
+  .movieTv__single-container {
+    position: relative;
+    .movieTv__single-detail-container {
+      display: flex;
+      background-color: $light-theme-background-color;
+      box-shadow: 1px 1px 8px #000;
+      .movieTv__single-img {
+        flex-basis: 35%;
+        img {
+          @include imgObj;
+          @include singleImgXL;
+
+          @media (max-width: 1365px) {
+            @include singleImgLG;
+          }
+        }
+      }
+      .movieTv__single-detail {
+        padding: 10px;
+        flex-basis: 65%;
+        @include lightScrollBar;
+        .movieTv__single-title {
+          padding: 8px;
+          font-family: 'Prosto One';
+          background-color: rgba(0, 0, 0, 0.8);
+          color: $text-color !important;
+          .movieTv__single-title-sub {
+            span {
+              display: inline-block;
+              margin: 0 !important;
+              padding: 0 !important;
+              text-transform: uppercase;
+              font-size: 1.5em;
+              line-height: 1.5em;
+              font-weight: bold;
+              &::first-letter {
+                font-size: 1.25em;
+              }
+            }
+            a {
+              cursor: pointer;
+              font-size: 1.4em;
+              color: $text-color;
+              &:hover {
+                color: $default-hover-text-color;
+              }
+            }
+            @media (max-width: 767px) {
+              a,
+              span {
+                font-size: 1.2em;
+              }
+            }
+          }
+          .movieTv__single-tagline {
+            font-size: 1.2em;
+            @media (max-width: 767px) {
+              font-size: 1.1em;
+            }
+          }
+          hr {
+            margin: 8px 0 !important;
+            background-color: rgba(255, 255, 255, 0.1) !important;
+          }
+          .movieTv__single-vote,
+          .movieTv__single-release,
+          .movieTv__single-runtime {
+            margin: 0 15px;
+            font-size: 1em;
+            color: $text-color;
+          }
+          .movieTv__single-release {
+            &:hover {
+              color: $default-hover-text-color;
+              cursor: pointer;
+              transition: all ease-in-out 0.3s;
+            }
+          }
+          .movieTv__single-vote {
+            margin-left: 0 !important;
+          }
+          .movieTv__single-genre {
+            li {
+              display: inline-block;
+              a {
+                font-size: 1em;
+                color: $text-color;
+                &:hover {
+                  color: $default-hover-text-color;
+                }
+              }
+            }
+          }
+        }
+        .movieTv__single-overview {
+          margin: 10px 0;
+          font-size: 1.2em;
+          word-spacing: 1.5px;
+          line-height: 1.2em;
+        }
+        .movieTv__single-status,
+        .movieTv__single-type {
+          @include statusIMDb;
+          background-color: #1d1d1d;
+          text-transform: uppercase;
+        }
+        .movieTv__single-imdb {
+          @include statusIMDb;
+          cursor: pointer;
+          background-color: $default-star-color;
+          color: $light-theme-text-color;
+          transition: all ease-in-out 0.3s;
+          &:hover {
+            background-color: #1d1d1d;
+            color: $default-star-color;
+          }
+        }
+        @media (min-width: 1366px) {
+          padding-top: $default-padding-top;
+        }
+        .movieTv__single-facts {
+          & > div {
+            margin-top: 1em;
+          }
+          hr {
+            margin: 0 !important;
+            background-color: rgba(255, 255, 255, 0.2);
+          }
+          .movieTv__single-options {
+            background-color: rgba(0, 0, 0, 0.1);
+            ul {
+              li {
+                span {
+                  display: block;
+                  padding: 12px;
+                  text-decoration: none;
+                  text-transform: uppercase;
+                  font-size: 1.2em;
+                  color: $light-theme-text-color;
+                  background-color: transparent;
+                  @include lightHover;
+                }
+              }
+            }
+          }
+          .movieTv__single-rbg,
+          .movieTv__single-keyword,
+          .movieTv__single-season {
+            background-color: rgba(0, 0, 0, 0.1);
+            font-size: 1.2em;
+            & > span {
+              display: block;
+              padding: 0.5em;
+            }
+          }
+          .movieTv__single-rbg {
+            & > span > span {
+              @include span;
+            }
+          }
+          .movieTv__single-keyword,
+          .movieTv__single-season {
+            & > div {
+              max-height: 14em;
+              overflow: auto;
+              @include lightScrollBar;
+            }
+            & > span {
+              @include span;
+              padding: 0.5em 5px;
+            }
+            .MuiChip-root {
+              margin: 0.15rem;
+              background-color: rgba(0, 0, 0, 0.05);
+              .MuiChip-label {
+                padding: 10px !important;
+              }
+              &:hover {
+                cursor: pointer;
+                background-color: rgba(0, 0, 0, 0.4);
+                color: $dark-theme-text-color;
+              }
+            }
+          }
+          .movieTv__single-keyword {
+            & > div {
+              padding: 5px;
+            }
+          }
+          .movieTv__single-season {
+            & > div {
+              div {
+                padding: 5px;
+                position: relative;
+                span {
+                  position: absolute;
+                  right: 1em;
+                  font-size: 0.9em;
+                  line-height: 1.5em;
+                  width: 1.5em;
+                  text-align: center;
+                  border-radius: 50%;
+                  background-color: rgba(255, 255, 255, 0.4);
+                }
+                &:hover {
+                  @include lightHover;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      @media (max-width: 1365px) {
+        flex-direction: column;
+      }
+    }
+    .movieTv__single-more-detail {
+      padding: 10px;
+      padding-top: 0;
+      h3 {
+        @include detailTitle;
+      }
+    }
+  }
+}
+
+@import './movieTvCredit';
+@import './movieTvImage';
+@import './movieTvTrailer';
+@import './movieTvSimilar';
+
+body.dark-theme {
+  .movieTv__single-wrapper {
+    .movieTv__single-wrapper-overlay {
+      background-color: rgba(0, 0, 0, 0.9) !important;
+    }
+    .movieTv__single-more-detail {
+      h3 {
+        color: $text-color !important;
+      }
+    }
+    .movieTv__single-detail-container {
+      background-color: $dark-theme-background-color !important;
+    }
+    .movieTv__single-status,
+    .movieTv__single-type {
+      background-color: $text-color !important;
+      color: $light-theme-text-color !important;
+    }
+    .movieTv__single-imdb {
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.9) !important;
+      }
+    }
+    .movieTv__single-overview {
+      color: $text-color;
+    }
+
+    .movieTv__single-facts {
+      .movieTv__single-options {
+        background-color: rgba(0, 0, 0, 0.8) !important;
+        ul li {
+          span {
+            color: $text-color !important;
+            &:hover {
+              background-color: rgba(255, 255, 255, 0.2) !important;
+            }
+          }
+        }
+      }
+      .movieTv__single-rbg,
+      .movieTv__single-keyword,
+      .movieTv__single-season {
+        background-color: rgba(0, 0, 0, 0.8) !important;
+        & > span {
+          color: $text-color;
+        }
+        .MuiChip-root {
+          background-color: rgba(255, 250, 250, 0.4) !important;
+          color: $text-color;
+          &:hover {
+            background-color: $dark-theme-active-background-color !important;
+            color: $dark-theme-text-color;
+          }
+        }
+      }
+      .movieTv__single-season,
+      .movieTv__single-keyword {
+        & > div {
+          @include darkScrollBar;
+          div {
+            color: $text-color !important;
+            &:hover {
+              background-color: rgba(255, 255, 255, 0.2) !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}

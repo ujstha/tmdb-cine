@@ -1,0 +1,49 @@
+.movieTv__credit-container {
+  @include flexNoWrap;
+  .movieTv__credit-img {
+    @include flexCenter;
+    height: 55px;
+    width: 55px;
+    border-radius: 50%;
+    margin-right: calc(0.25rem * 3);
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.8);
+    background-position: top;
+    background-size: cover;
+    object-fit: cover;
+    object-position: center;
+    i {
+      font-size: 1.5em;
+      color: #fff;
+    }
+  }
+  .movieTv__credit-name span,
+  .movieTv__credit-job {
+    @include textEllipsis;
+  }
+  .movieTv__credit-name span {
+    font-size: 1em;
+    color: #fff;
+    transition: all ease-in-out 0.2s;
+  }
+  .movieTv__credit-job {
+    color: grey;
+    font-size: 0.9em;
+  }
+  .media {
+    padding: 0.5rem 0.75rem;
+    margin-right: 0.75rem;
+    border: 1px solid #dadce0;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: #1d1d1d;
+    .media-body {
+      width: 120px;
+    }
+    &:hover .movieTv__credit-name span {
+      text-decoration: none;
+      color: #1e90ff /*#f48fb1*/;
+      transition: all ease-in-out 0.2s;
+    }
+  }
+}

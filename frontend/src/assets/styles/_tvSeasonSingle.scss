@@ -1,0 +1,278 @@
+@mixin hoverText {
+  &:hover {
+    color: $default-hover-text-color;
+    cursor: pointer;
+    transition: all ease-in-out 0.3s;
+  }
+}
+.tvSeason__single-wrapper {
+  position: relative;
+  overflow-x: hidden;
+  @include backgroundFixed;
+  .tvSeason__single-wrapper-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 250, 250, 0.92);
+    @include backgroundFixed;
+  }
+  .tvSeason__single-container {
+    position: relative;
+    .tvSeason__single-detail-container {
+      display: flex;
+      background-color: $light-theme-background-color;
+      box-shadow: 1px 1px 8px #000;
+      .tvSeason__single-img {
+        flex-basis: 40%;
+        img {
+          @include imgObj;
+          @include singleImgXL;
+
+          @media (max-width: 1365px) {
+            @include singleImgLG;
+          }
+        }
+      }
+      .tvSeason__single-detail {
+        padding: 10px;
+        flex-basis: 60%;
+        @include lightScrollBar;
+        .tvSeason__single-title {
+          padding: 8px;
+          font-family: 'Prosto One';
+          background-color: rgba(0, 0, 0, 0.8);
+          color: $text-color !important;
+          .tvSeason__single-title-sub {
+            span {
+              display: inline-block;
+              margin: 0 !important;
+              padding: 0 !important;
+              text-transform: uppercase;
+              font-size: 1.5em;
+              line-height: 1.5em;
+              font-weight: bold;
+              &::first-letter {
+                font-size: 1.25em;
+              }
+            }
+            a {
+              font-size: 1.4em;
+              color: $text-color;
+              @include hoverText;
+            }
+            @media (max-width: 767px) {
+              a,
+              span {
+                font-size: 1.2em;
+              }
+            }
+          }
+          .tvSeason__single-episode {
+            font-size: 1.2em;
+            @media (max-width: 767px) {
+              font-size: 1.1em;
+            }
+          }
+          .tvSeason__single-release {
+            @include hoverText;
+          }
+        }
+        .tvSeason__single-previous,
+        .tvSeason__single-next {
+          @include statusIMDb;
+          box-shadow: 1px 1px 5px #000;
+          background-color: rgba(0, 0, 0, 0.8);
+          color: #fff;
+          &:hover {
+            cursor: pointer;
+          }
+        }
+        .tvSeason__single-overview {
+          margin: 10px 0;
+          font-size: 1.2em;
+          word-spacing: 1.5px;
+          line-height: 1.2em;
+        }
+        @media (min-width: 1366px) {
+          padding-top: $default-padding-top;
+        }
+        .tvSeason__single-facts {
+          & > div {
+            margin-top: 1em;
+          }
+          hr {
+            margin: 0 !important;
+            background-color: rgba(255, 255, 255, 0.2);
+          }
+          .tvSeason__single-episode-list {
+            background-color: rgba(0, 0, 0, 0.1);
+            font-size: 1.2em;
+            & > div {
+              padding: 5px;
+              max-height: 14em;
+              overflow: auto;
+              @include lightScrollBar;
+            }
+            & > span {
+              @include span;
+              padding: 0.5em 5px;
+            }
+            .MuiChip-root {
+              margin: 0.15rem;
+              background-color: rgba(0, 0, 0, 0.05);
+              .MuiChip-label {
+                padding: 10px !important;
+              }
+              &:hover {
+                cursor: pointer;
+                background-color: rgba(0, 0, 0, 0.4);
+                color: $dark-theme-text-color;
+              }
+            }
+          }
+        }
+      }
+
+      @media (max-width: 1365px) {
+        flex-direction: column;
+      }
+    }
+    .tvSeason__single-more-detail {
+      padding: 10px;
+      padding-top: 0;
+      h3 {
+        margin-top: 1em;
+        font-size: 2em;
+        color: #1d1d1d !important;
+      }
+      .row {
+        margin: 2px;
+      }
+      .col-xl-3 {
+        padding: 10px 0 !important;
+      }
+      .col-xl-9 {
+        padding: 10px !important;
+      }
+      .tvSeason__single-episode-container {
+        padding: 0 10px;
+        margin-top: 8px;
+        background-color: rgba(0, 0, 0, 0.2);
+        .tvSeason__single-episode-img {
+          @include imgObj;
+          max-height: 18em;
+          margin: 10px 0;
+          @media (max-width: 1365px) {
+            max-height: 16em;
+          }
+          @media (max-width: 1023px) {
+            max-height: 15em;
+          }
+        }
+        .tvSeason__single-episode-detail {
+          .tvSeason__single-episode-name {
+            font-size: 1.5em;
+            font-weight: bold;
+            @media (max-width: 767px) {
+              font-size: 1.3em;
+            }
+          }
+          .tvSeason__single-episode-sub {
+            font-weight: bold;
+            .tvSeason__single-release-date {
+              @include hoverText;
+            }
+          }
+          .tvSeason__single-episode-crew,
+          .tvSeason__single-episode-guest {
+            b {
+              text-transform: capitalize;
+              font-size: 1.2em;
+            }
+            margin: 10px 0;
+            span {
+              @include hoverText;
+            }
+          }
+          .tvSeason__single-watch-episode {
+            background-color: rgba(0, 0, 0, 0.1);
+            &:hover {
+              background-color: rgba(0, 0, 0, 0.25);
+              color: $text-color !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+body.dark-theme {
+  .tvSeason__single-wrapper {
+    color: $text-color;
+    .tvSeason__single-wrapper-overlay {
+      background-color: rgba(0, 0, 0, 0.9);
+    }
+    .tvSeason__single-more-detail {
+      h3 {
+        color: $text-color !important;
+      }
+      .tvSeason__single-episode-container {
+        background-color: #1d1d1d;
+        .tvSeason__single-episode-overview,
+        .tvSeason__single-episode-crew,
+        .tvSeason__single-episode-guest {
+          b {
+            color: $text-color;
+          }
+          color: grey;
+        }
+      }
+    }
+    .tvSeason__single-detail-container {
+      background-color: $dark-theme-background-color;
+    }
+    .tvSeason__single-previous,
+    .tvSeason__single-next {
+      background-color: rgba(0, 0, 0, 0.8) !important;
+      color: $text-color;
+    }
+    .tvSeason__single-overview {
+      color: $text-color;
+    }
+
+    .tvSeason__single-facts {
+      .tvSeason__single-episode-list {
+        background-color: rgba(0, 0, 0, 0.8) !important;
+        & > span {
+          color: $text-color;
+        }
+        .MuiChip-root {
+          background-color: rgba(255, 250, 250, 0.4) !important;
+          color: $text-color;
+          &:hover {
+            background-color: $dark-theme-active-background-color !important;
+            color: $dark-theme-text-color;
+          }
+        }
+      }
+      .tvSeason__single-episode-list {
+        & > div {
+          @include darkScrollBar;
+          div {
+            color: $text-color !important;
+            &:hover {
+              background-color: rgba(255, 255, 255, 0.2) !important;
+            }
+          }
+        }
+      }
+    }
+    .tvSeason__single-watch-episode {
+      background-color: rgba(255, 255, 255, 0.1) !important;
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.25) !important;
+      }
+    }
+  }
+}

@@ -1,0 +1,63 @@
+.movieTv__genre-list-container {
+  padding: $default-padding-x !important;
+  padding-top: $default-padding-top !important;
+  padding-bottom: 10px !important;
+  .row {
+    padding: 0 40px;
+    @media (max-width: 1365px) {
+      padding: 0 12px;
+    }
+    @media (max-width: 1023px) {
+      padding: 0 8px;
+    }
+  }
+  .col-12 {
+    padding: 5px !important;
+    margin: 15px 0;
+    h3 {
+      margin: 0 !important;
+      font-weight: bold;
+    }
+  }
+  .movieTv__genre-tv {
+    margin-top: 25px;
+  }
+  .col-6 {
+    padding: 5px !important;
+  }
+  .movieTv__genre-list {
+    height: 160px;
+    @include flexCenter;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: all ease-in-out 0.2s;
+    span {
+      font-size: 1.05em;
+      text-transform: uppercase;
+      color: #1d1d1d;
+    }
+    &:hover {
+      cursor: pointer;
+      box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.6);
+      transition: all ease-in-out 0.25s;
+    }
+    @media (max-width: 767px) {
+      height: 96px;
+    }
+  }
+}
+body.dark-theme {
+  .movieTv__genre-list-container {
+    h3,
+    span {
+      color: $text-color;
+    }
+    .movieTv__genre-list {
+      background-color: rgba(255, 255, 255, 0.05);
+      color: $text-color;
+      &:hover {
+        box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.8);
+      }
+    }
+  }
+}

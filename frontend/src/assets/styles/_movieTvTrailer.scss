@@ -1,0 +1,22 @@
+.movieTv__single-trailer-container {
+  @include flexNoWrap;
+  .movieTv__single-trailer {
+    iframe {
+      width: 28.5em;
+      height: 18.5em;
+      margin: 4px;
+      background-color: #000;
+      transition: all ease-in-out 0.3s;
+      @media (max-width: 1365px) {
+        width: 26.5em;
+        height: 16.5em;
+        transition: all ease-in-out 0.3s;
+      }
+      @media (max-width: 767px) {
+        width: 24.5em;
+        height: 15.5em;
+        transition: all ease-in-out 0.3s;
+      }
+    }
+  }
+}
