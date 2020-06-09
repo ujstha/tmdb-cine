@@ -9,7 +9,7 @@ import {
   TitleNames,
 } from '../helper-components/TitleNames';
 import { VoteAverage } from '../helper-components/VoteAverage';
-import { HeadTitle } from '../helper-components/HeadTitle';
+import HeadTitle from '../helper-components/HeadTitle';
 import { GenreLink } from '../helper-components/RouteLink';
 import { imdbUrlInNewTab, goToRte } from '../../services/goToUrl';
 import MovieAndTvSimilar from './MovieAndTvSimilar';

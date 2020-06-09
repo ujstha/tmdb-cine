@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { singleSearchAction } from '../actions/searchAction';
 import { Loader } from '../components/helper-components/Loader';
-import { HeadTitle } from '../components/helper-components/HeadTitle';
+import HeadTitle from '../components/helper-components/HeadTitle';
 import { ZeroResult } from '../components/helper-components/ErrorPage';
 import { SearchResult } from '../components/common-components/SearchResult';
 import { Paging } from '../components/helper-components/Paging';

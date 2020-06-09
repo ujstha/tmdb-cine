@@ -6,7 +6,7 @@ import { ZeroResult } from '../components/helper-components/ErrorPage';
 import { CategoryTabs } from '../components/helper-components/CategoryTabs';
 import { Loader } from '../components/helper-components/Loader';
 import { Paging } from '../components/helper-components/Paging';
-import { HeadTitle } from '../components/helper-components/HeadTitle';
+import HeadTitle from '../components/helper-components/HeadTitle';
 import { searchParam } from '../services/searchParam';
 import { MovieAndTvMain } from '../components/common-components/MovieAndTvMain';
 import { MovieAndTvFilterOption } from '../components/common-components/MovieAndTvFilterOption';

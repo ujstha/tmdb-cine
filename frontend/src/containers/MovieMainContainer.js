@@ -5,7 +5,7 @@ import { genresAction } from '../actions/genresAction';
 import { Loader } from '../components/helper-components/Loader';
 import { MovieAndTvMain } from '../components/common-components/MovieAndTvMain';
 import { Paging } from '../components/helper-components/Paging';
-import { HeadTitle } from '../components/helper-components/HeadTitle';
+import HeadTitle from '../components/helper-components/HeadTitle';
 import { MovieAndTvFilterOption } from '../components/common-components/MovieAndTvFilterOption';
 import { searchParam } from '../services/searchParam';
 import { ZeroResult } from '../components/helper-components/ErrorPage';

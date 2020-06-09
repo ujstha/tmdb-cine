@@ -1,7 +1,7 @@
 import React from 'react';
 import { goToUrl } from '../../services/goToUrl';
 import { genres } from '../../constants/genreLists';
-import { HeadTitle } from '../helper-components/HeadTitle';
+import HeadTitle from '../helper-components/HeadTitle';
 
 const { movieGenres, tvGenres } = genres;
 

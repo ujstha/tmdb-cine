@@ -9,7 +9,7 @@ import {
   TitleNames,
   SplittedTitles,
 } from '../helper-components/TitleNames';
-import { HeadTitle } from '../helper-components/HeadTitle';
+import HeadTitle from '../helper-components/HeadTitle';
 import { goToRte, prevSeason, nextSeason } from '../../services/goToUrl';
 import { MovieAndTvCredit } from '../common-components/MovieAndTvCredit';
 import { MovieAndTvTrailer } from '../common-components/MovieAndTvTrailer';
