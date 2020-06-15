@@ -1,0 +1,273 @@
+@mixin fontSizePerson {
+  display: inline-block;
+  text-transform: uppercase;
+  font-family: 'Prosto One';
+  font-size: 1.5em;
+  font-weight: bold;
+  &::first-letter {
+    font-size: 1.25em;
+  }
+  @media (max-width: 767px) {
+    font-size: 1.3em;
+  }
+}
+@mixin backgroundClip {
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+@mixin headBgColor {
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: $text-color !important;
+}
+@mixin sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: $default-padding-top;
+}
+.person__single-wrapper {
+  @media (min-width: 1366px) {
+    padding: 0 50px;
+  }
+  @media (max-width: 1365px) {
+    padding: 0 30px;
+  }
+  padding-top: $default-padding-top !important;
+  max-width: 100%;
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  .person__single-wrapper-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255, 250, 250, 0.92);
+  }
+  .row,
+  .col-lg-4,
+  .col-lg-9 {
+    padding: 0 !important;
+  }
+  .person__single-img {
+    height: 350px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    @media (min-width: 768px) {
+      @include sticky;
+    }
+
+    @media (max-width: 1023px) {
+      height: 280px;
+    }
+    @media (max-width: 767px) {
+      background-size: contain;
+    }
+  }
+  .person__single-detail {
+    width: 100%;
+    @media (min-width: 768px) {
+      padding: 0 15px;
+    }
+    height: auto;
+    hr {
+      margin: 8px 0 !important;
+      background-color: rgba(255, 255, 255, 0.1) !important;
+    }
+    .person__single-title {
+      @media (min-width: 768px) {
+        & {
+          @include headBgColor;
+        }
+      }
+      span:not(.person__single-known-for) {
+        @include fontSizePerson;
+      }
+      .person__single-known-for {
+        display: block;
+        color: grey;
+      }
+      & ~ p {
+        margin: 5px 0;
+        font-size: 1.1em;
+        @media (max-width: 767px) {
+          margin: 2px 0;
+          font-size: 1.05em;
+        }
+      }
+    }
+    .person__sinlge-external-ids {
+      .fa {
+        display: inline-block;
+        cursor: pointer;
+        font-size: 2em;
+        transition: transform ease-in-out 0.2s;
+        &:not(:first-of-type) {
+          margin-left: 1.5em;
+        }
+        &:hover {
+          transform: scale(1.2);
+          transition: transform ease-in-out 0.2s;
+        }
+      }
+      .fa-imdb {
+        color: $default-star-color;
+      }
+      .fa-facebook-square {
+        color: rgba(59, 89, 152, 1);
+      }
+      .fa-twitter {
+        color: rgba(0, 172, 237, 1);
+      }
+      .fa-instagram {
+        background: #d6249f;
+        background: radial-gradient(
+          circle at 30% 107%,
+          #fdf497 0%,
+          #fdf497 5%,
+          #fd5949 45%,
+          #d6249f 60%,
+          #285aeb 90%
+        );
+        @include backgroundClip;
+      }
+    }
+    .person__single-bio {
+      white-space: pre-wrap;
+    }
+    @media (max-width: 767px) {
+      .truncate-btn:before {
+        cursor: pointer;
+        content: 'less';
+        color: rgba(24, 144, 255, 1);
+        font-size: 1.1em;
+        margin-left: 5px;
+      }
+      .truncated + .truncate-btn:before {
+        content: 'more';
+        margin-left: 0;
+      }
+      .person__single-bio.truncated {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      @supports (display: -webkit-box) {
+        .person__single-bio.truncated {
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+          white-space: normal;
+        }
+      }
+    }
+    .person__single-credit-known {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      overflow-y: hidden;
+      @include hideScroll;
+      div {
+        width: 134px;
+        cursor: pointer;
+        &:not(:first-of-type) {
+          margin-left: 5px;
+        }
+        & > img {
+          width: 134px;
+          height: 200px;
+          object-fit: cover;
+          background-color: #333;
+        }
+        & > p {
+          @include textEllipsis;
+        }
+      }
+    }
+    h3 {
+      @include detailTitle;
+      @include headBgColor;
+    }
+    .pswp-thumbnail {
+      img {
+        width: 110px;
+      }
+    }
+    .person__single-credits {
+      .person__single-credits-filter {
+        margin: 1em 0;
+        display: flex;
+        justify-content: space-between;
+        @include headBgColor;
+        & > span {
+          & > button {
+            margin-left: 10px;
+          }
+        }
+        b {
+          text-transform: capitalize;
+          font-size: 1.5em;
+        }
+      }
+      ul {
+        background-color: rgba(255, 255, 255, 1);
+        .person__single-credit:not(:last-of-type) {
+          border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        .person__single-credit {
+          padding: 8px;
+          display: flex;
+          &:hover {
+            cursor: pointer;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: #fff;
+          }
+          .person__single-credit-img {
+            width: 50px;
+          }
+          .person__single-credit-detail {
+            display: inline-block;
+            padding-left: 10px;
+          }
+        }
+      }
+      .person__single-credits-zero {
+        font-size: 1.2em;
+        color: $default-genre-hover-color;
+      }
+    }
+  }
+}
+
+body.dark-theme {
+  .person__single-wrapper {
+    .person__single-wrapper-overlay {
+      background-color: rgba(0, 0, 0, 0.9) !important;
+    }
+    .person__single-detail {
+      h3 {
+        color: $text-color !important;
+      }
+      .person__single-credits {
+        ul {
+          background-color: rgba(0, 0, 0, 0.85);
+          .person__single-credit:not(:last-of-type) {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+          }
+          .person__single-credit {
+            &:hover {
+              background-color: rgba(255, 255, 255, 0.1);
+            }
+          }
+        }
+      }
+    }
+  }
+}

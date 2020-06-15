@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Loader } from '../components/helper-components/Loader';
 import { personAction } from '../actions/personsAction';
 import { ZeroResult } from '../components/helper-components/ErrorPage';
-import { PersonSingle } from '../components/personComponents/PersonSingle';
+import { PersonSingle } from '../components/person-components/PersonSingle';
 import { backgroundImg } from '../components/helper-components/PosterImage';
 
 class PersonSingleContainer extends Component {
