@@ -14,7 +14,7 @@ const Home = ({ category, movieTv, title, urlType }) => {
         <span onClick={() => goToUrl(`/${urlType}s/category/${category}`)}>
           {title}
         </span>
-        <Carousel infinite={true} xl={6} lg={4} md={3} sm={1}>
+        <Carousel xl={6} lg={4} md={3} sm={2}>
           {movieTv
             .filter((filteredHome) => filteredHome.category === category)
             .map((homeMovieTv) => (

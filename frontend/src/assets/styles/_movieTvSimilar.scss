@@ -37,14 +37,16 @@ $sizeSM: 20px;
 .slick-prev::before {
   content: '\276E';
 }
+.slick-slider {
+  .slick-list {
+    @media (max-width: 1365px) {
+      overflow-x: auto;
+      @include hideScroll;
+    }
+  }
+}
 .movieTv__single-similar-wrapper {
   .slick-slider {
-    .slick-list {
-      @media (max-width: 1365px) {
-        overflow-x: auto;
-        @include hideScroll;
-      }
-    }
     .slick-slide {
       padding: 2px;
       &,

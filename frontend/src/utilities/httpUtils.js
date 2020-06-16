@@ -17,7 +17,7 @@ export const fetch = (endpoint) => {
 };
 
 export const fetchByTrending = () => {
-  return httpBaseUtil.get(`/3/trending/movie/day`, {
+  return httpBaseUtil.get(`/3/trending/movie/week`, {
     params: {
       include_image_language: 'null',
       language: lang,

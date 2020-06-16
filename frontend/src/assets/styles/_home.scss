@@ -91,13 +91,6 @@
         transform: translate3d(20%, 0, 0);
       }
     }
-
-    @media (max-width: 767px) {
-      .slick-slide,
-      .home__homeMovieTv-img {
-        height: 170px !important;
-      }
-    }
   }
 }
 

@@ -8,7 +8,7 @@ const MovieAndTvSimilar = ({ movieTv, title, urlType }) => {
   return movieTv && movieTv.results.length !== 0 ? (
     <div className='movieTv__single-similar-wrapper'>
       <h3>{title}</h3>
-      <Carousel infinite={false} xl={9} lg={6} md={5} sm={3}>
+      <Carousel xl={9} lg={6} md={5} sm={3}>
         {movieTv.results.map((similar) => (
           <a
             href={`/${urlType}/${similar.id}/${TitleNames(similar)}`}

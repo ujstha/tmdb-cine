@@ -20,35 +20,36 @@ class Carousel extends Component {
     }
   };
   render() {
-    const { infinite, xl, lg, md, sm } = this.props;
+    const { infinite, autoplay, xl, lg, md, sm } = this.props;
 
     const settings = {
       dots: false,
-      infinite: infinite,
-      speed: 500,
+      autoplay: autoplay || false,
+      autoplaySpeed: 5000,
+      infinite: infinite || false,
+      speed: autoplay ? 2000 : 1500,
       slidesToShow: xl,
-      slidesToScroll: xl,
+      slidesToScroll: autoplay ? 1 : xl,
       responsive: [
         {
           breakpoint: 1025,
           settings: {
-            slidesToShow: lg,
-            slidesToScroll: lg,
+            slidesToShow: lg || xl,
+            slidesToScroll: lg || xl,
           },
         },
         {
           breakpoint: 768,
           settings: {
-            slidesToShow: md,
-            slidesToScroll: md,
+            slidesToShow: md || xl,
+            slidesToScroll: md || xl,
           },
         },
         {
           breakpoint: 464,
           settings: {
-            slidesToShow: sm,
-            slidesToScroll: sm,
-            centerMode: true,
+            slidesToShow: sm || xl,
+            slidesToScroll: sm || xl,
           },
         },
       ],

@@ -1,0 +1,17 @@
+.trending__wrapper {
+  .trending__trendingMovieTv-img {
+    width: 100%;
+    height: 80vh;
+    object-fit: cover;
+    object-position: top;
+    cursor: pointer;
+
+    @media (max-width: 1365px) {
+      height: 40vh;
+    }
+
+    @media (max-width: 767px) {
+      height: 50vh;
+    }
+  }
+}
