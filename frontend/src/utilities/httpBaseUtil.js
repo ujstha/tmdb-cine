@@ -6,3 +6,12 @@ export const httpBaseUtil = axios.create({
   params: { api_key: config.API_KEY },
   responseType: 'json',
 });
+
+export const httpUserBaseUtil = axios.create({
+  baseURL: config.API_USER_BASE_URL,
+});
+
+export const httpMediaBaseUtil = axios.create({
+  baseURL: config.API_USER_BASE_URL,
+  headers: { authToken: localStorage.authToken },
+});

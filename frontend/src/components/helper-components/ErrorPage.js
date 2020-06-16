@@ -24,8 +24,12 @@ export const ErrorPage = () => {
   );
 };
 
-export const ZeroResult = ({ message }) => (
-  <div className='movieTv__zero-result'>
+export const ZeroResult = ({ message, fullHeight }) => (
+  <div
+    className={`movieTv__zero-result ${
+      fullHeight ? 'movieTv__zero-result-full' : ''
+    }`}
+  >
     <Empty description={<span>{message}</span>} />
   </div>
 );

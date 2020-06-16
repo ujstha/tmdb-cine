@@ -22,4 +22,6 @@ export const config = {
     },
   ],
   API_TRAILER: 'https://www.youtube.com/embed/',
+  // API_USER_BASE_URL: 'http://localhost:5000/api',
+  API_USER_BASE_URL: 'https://tmdb-cine.herokuapp.com/api',
 };

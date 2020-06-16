@@ -1,4 +1,8 @@
-import { httpBaseUtil } from './httpBaseUtil';
+import {
+  httpBaseUtil,
+  httpUserBaseUtil,
+  httpMediaBaseUtil,
+} from './httpBaseUtil';
 import { config } from '../constants/config';
 
 const lang = localStorage.language;
@@ -111,4 +115,24 @@ export const fetchBySeasonNumber = (tvId, seasonNumber) => {
       language: lang,
     },
   });
+};
+
+export const registerUser = (data) => {
+  return httpUserBaseUtil.post('/register', data);
+};
+
+export const loginUser = (data) => {
+  return httpUserBaseUtil.post('/login', data);
+};
+
+export const addToFavorite = (data) => {
+  return httpMediaBaseUtil.post('/media', data);
+};
+
+export const fetchFavorite = () => {
+  return httpMediaBaseUtil.get('/media');
+};
+
+export const removeFavorite = (id) => {
+  return httpMediaBaseUtil.delete(`/media/delete/${id}`);
 };

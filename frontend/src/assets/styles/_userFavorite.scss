@@ -1,0 +1,92 @@
+.user__favorite-wrapper {
+  padding-top: $default-padding-top;
+  background-color: $light-theme-background-color;
+  .user__favorite-welcome {
+    text-align: center;
+    & > span {
+      display: inline-block;
+      padding: 10px;
+      width: inherit;
+      h2 {
+        margin-bottom: 0;
+        text-transform: capitalize;
+        font-weight: bold;
+        font-family: 'Prosto One';
+      }
+      button {
+        margin: 10px 0;
+        border-radius: 0;
+        color: $text-color !important;
+        &:hover {
+          background-color: #fc005a !important;
+        }
+      }
+      span {
+        display: block;
+      }
+    }
+  }
+  .user__favorite-container {
+    position: relative;
+    .user__favorite-list {
+      position: relative;
+      overflow: hidden;
+      .MuiIconButton-root {
+        position: absolute;
+        bottom: 5px;
+        left: 5px;
+        background-color: rgba($color: #000000, $alpha: 0.2);
+        i {
+          color: red;
+        }
+      }
+    }
+    h3 {
+      margin: 0 !important;
+      position: absolute;
+      top: 10px;
+      left: 0.5em;
+    }
+    .slick-track,
+    .user__favorite-img {
+      height: 500px;
+      width: 100%;
+      object-fit: cover;
+      @media (max-width: 1023px) {
+        height: 400px;
+      }
+    }
+    .slick-arrow {
+      height: 15%;
+    }
+    .slick-slide {
+      position: relative;
+      display: inline-block;
+      padding: 0;
+      margin: 50px 0 !important;
+      cursor: pointer;
+      transition: 450ms all;
+      transform-origin: center left;
+    }
+    .slick-slide:hover .slick-track {
+      transform: translate3d(0, -125px, 0);
+    }
+    .slick-track:hover .slick-slide:hover {
+      transform: scale(1.2);
+    }
+    .slick-slide:hover ~ .slick-slide {
+      transform: translate3d(20%, 0, 0);
+    }
+  }
+}
+
+body.dark-theme {
+  .user__favorite-wrapper {
+    background-color: $dark-theme-background-color;
+    h2,
+    h3,
+    span {
+      color: $dark-theme-text-color;
+    }
+  }
+}

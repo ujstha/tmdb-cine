@@ -1,0 +1,8 @@
+.loader {
+  min-height: calc(100vh - 65px);
+  @include flexCenter;
+}
+.small-loader {
+  min-height: 200px;
+  @include flexCenter;
+}
