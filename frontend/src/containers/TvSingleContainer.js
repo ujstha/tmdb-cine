@@ -47,7 +47,6 @@ class TvSingleContainer extends Component {
           }
           bgColor={bgColor}
         />
-        {console.log(tv)}
       </>
     ) : (
       <ZeroResult message='Something went wrong !' />

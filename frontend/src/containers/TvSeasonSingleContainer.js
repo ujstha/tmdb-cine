@@ -19,7 +19,6 @@ class TvSeasonSingleContainer extends Component {
       <Loader />
     ) : tvSeason ? (
       <>
-        {console.log(tvSeason)}
         <TvSeasonSingle
           tvId={tvID}
           tvSeason={tvSeason}

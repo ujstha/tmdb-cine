@@ -11,7 +11,6 @@ export const SearchResult = ({ searchResults, searchType }) =>
       className={`col-6 col-md-4 col-lg-3 col-xl-2 col-${searchType}`}
       key={index}
     >
-      {console.log(searchResults)}
       <div
         key={searchResult.id}
         className='search__result'

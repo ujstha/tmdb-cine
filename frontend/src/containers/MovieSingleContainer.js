@@ -54,7 +54,6 @@ class MovieSingleContainer extends Component {
           onClose={this.closeMovie}
           movieTv={movie}
         />
-        {console.log(movie)}
       </>
     ) : (
       <ZeroResult message='Something went wrong !' />
