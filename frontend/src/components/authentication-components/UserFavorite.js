@@ -1,58 +1,27 @@
 import React from 'react';
-import Slider from 'react-slick';
 import { Tooltip } from 'antd';
 import { IconButton } from '@material-ui/core';
 import { goToUrl } from '../../services/goToUrl';
 import { MediumPosterImage } from '../helper-components/PosterImage';
+import Carousel from '../helper-components/Carousel';
 
-export const UserFavorite = ({
-  favoriteMedia,
-  parentRef,
-  sliderRef,
-  title,
-  filterType,
-  remove,
-}) => {
-  const settings = {
-    dots: false,
-    infinite:
-      favoriteMedia.filter(
-        (filterMedia) => filterMedia.mediaType === filterType
-      ).length < 5
-        ? false
-        : true,
-    speed: 500,
-    slidesToShow: 5,
-    slidesToScroll: 5,
-    responsive: [
-      {
-        breakpoint: 1025,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-        },
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-        },
-      },
-      {
-        breakpoint: 464,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-        },
-      },
-    ],
-  };
-
+export const UserFavorite = ({ favoriteMedia, title, filterType, remove }) => {
   return (
-    <div ref={parentRef} className='user__favorite-container'>
+    <div className='user__favorite-container'>
       <h3>{title}</h3>
-      <Slider {...settings} ref={sliderRef}>
+      <Carousel
+        infinite={
+          favoriteMedia.filter(
+            (filterMedia) => filterMedia.mediaType === filterType
+          ).length < 5
+            ? false
+            : true
+        }
+        xl={5}
+        lg={3}
+        md={3}
+        sm={2}
+      >
         {favoriteMedia
           .filter((filteredMedia) => filteredMedia.mediaType === filterType)
           .map((favorite, index) => {
@@ -82,7 +51,7 @@ export const UserFavorite = ({
               </div>
             );
           })}
-      </Slider>
+      </Carousel>
     </div>
   );
 };

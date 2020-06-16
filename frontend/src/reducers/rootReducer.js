@@ -7,12 +7,14 @@ import { searchReducer } from './searchReducer';
 import { registerReducer, loginReducer } from './usersReducer';
 import { saveMediaReducer, fetchMediaReducer } from './mediasReducer';
 import { homeReducer } from './homeReducer';
+import { trendingReducer } from './trendingReducer';
 
 export const rootReducer = combineReducers({
   register: registerReducer,
   login: loginReducer,
   saveMedia: saveMediaReducer,
   media: fetchMediaReducer,
+  trending: trendingReducer,
   home: homeReducer,
   genres: genresReducer,
   person: personReducer,

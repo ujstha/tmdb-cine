@@ -1,5 +1,6 @@
 .home__container {
   padding-top: $default-padding-top;
+  min-height: 100vh;
   .home__wrapper {
     position: relative;
     & > span {

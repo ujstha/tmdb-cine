@@ -16,6 +16,15 @@ export const fetch = (endpoint) => {
   return httpBaseUtil.get(`/3/${endpoint}`);
 };
 
+export const fetchByTrending = () => {
+  return httpBaseUtil.get(`/3/trending/movie/day`, {
+    params: {
+      include_image_language: 'null',
+      language: lang,
+    },
+  });
+};
+
 export const fetchById = (type, id) => {
   return httpBaseUtil.get(`/3/${type + '/' + id}`, {
     params: {

@@ -20,11 +20,11 @@ class Carousel extends Component {
     }
   };
   render() {
-    const { xl, lg, md, sm } = this.props;
+    const { infinite, xl, lg, md, sm } = this.props;
 
     const settings = {
       dots: false,
-      infinite: true,
+      infinite: infinite,
       speed: 500,
       slidesToShow: xl,
       slidesToScroll: xl,
@@ -55,9 +55,11 @@ class Carousel extends Component {
     };
 
     return (
-      <Slider {...settings} ref={(sliderRef) => (this.sliderRef = sliderRef)}>
-        {this.props.children}
-      </Slider>
+      <div ref={this.parentRef}>
+        <Slider {...settings} ref={(sliderRef) => (this.sliderRef = sliderRef)}>
+          {this.props.children}
+        </Slider>
+      </div>
     );
   }
 }

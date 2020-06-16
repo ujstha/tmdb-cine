@@ -52,6 +52,7 @@
 }
 .movieTv__zero-result {
   display: block !important;
+  min-height: 100vh !important;
   padding-top: 8em;
   text-align: center !important;
   h2 {
@@ -61,4 +62,8 @@
 
 .movieTv__zero-result-full {
   min-height: calc(100vh - 170px) !important;
+
+  @media (max-width: 1365px) {
+    min-height: 100vh !important;
+  }
 }
