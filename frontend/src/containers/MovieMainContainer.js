@@ -32,7 +32,7 @@ class MovieMainContainer extends Component {
       <Loader />
     ) : (
       <div className='movieTv__main-wrapper route__wrapper'>
-        <HeadTitle title={`Movie List`} />
+        <HeadTitle title='Movies' />
         <div className='row'>
           <div className='col-12 my-2'>
             <MovieAndTvFilterOption genres={genres} urlType='movie' />

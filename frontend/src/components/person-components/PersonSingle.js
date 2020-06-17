@@ -14,14 +14,16 @@ import {
   SplittedTitleNames,
   TitleNames,
 } from '../helper-components/TitleNames';
+import HeadTitle from '../helper-components/HeadTitle';
 import { MovieAndTvImage } from '../common-components/MovieAndTvImage';
 import { PersonExternalId } from './PersonExternalId';
 import { PersonCredits } from './PersonCredits';
 
 export const PersonSingle = ({ person }) => {
-  const { homepage, combined_credits } = person;
+  const { homepage, combined_credits, name } = person;
   return (
     <div className='row'>
+      <HeadTitle title={name} description={`Information about ${name}`} />
       <div
         className='col-xl-2 col-lg-3 col-md-3 person__single-img'
         style={{ backgroundImage: backgroundImg(person) }}

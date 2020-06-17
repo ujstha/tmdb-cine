@@ -28,7 +28,10 @@ export const MovieAndTvSingle = ({
   watch,
 }) => (
   <>
-    <HeadTitle title={`${TitleNames(movieTv)} ${GetYear(movieTv)}`} />
+    <HeadTitle
+      title={`${TitleNames(movieTv)} ${GetYear(movieTv)}`}
+      description={`Information about ${TitleNames(movieTv)}`}
+    />
     <main
       className='movieTv__single-wrapper'
       style={{ backgroundImage: backgroundImg(movieTv) }}
